@@ -264,7 +264,7 @@ def main():
                                 st.markdown(f"**Source {j}** (Similarity: {source.get('similarity', 0):.3f})")
                                 st.text_area(
                                     f"Event Content",
-                                    value=source.get('content', '')[:200] + "..." if len(source.get('content', '')) > 200 else source.get('content', ''),
+                                    value=source.get('content', ''),
                                     height=60,
                                     key=f"history_source_{i}_{j}",
                                     disabled=True
