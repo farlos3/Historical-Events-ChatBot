@@ -65,10 +65,18 @@ def initialize_database():
             else:
                 st.stop()
         
+        # Show file info for debugging
+        st.info(f"Loading data from: {DATA_PATH}")
+        
+        # Count lines for debugging
+        with open(DATA_PATH, 'r', encoding='utf-8') as f:
+            total_lines = len([line for line in f if line.strip()])
+        st.info(f"Found {total_lines} events in file")
+        
         db = create_historical_events_db(
             groq_api_key=GROQ_API_KEY,
             data_path=DATA_PATH,
-            load_saved=True
+            load_saved=False  # Force fresh load to avoid cache issues
         )
     return db
 
@@ -261,18 +269,6 @@ def main():
                                     key=f"history_source_{i}_{j}",
                                     disabled=True
                                 )
-    
-    # Footer
-    st.markdown("---")
-    st.markdown(
-        """
-        <div style='text-align: center; color: gray;'>
-        <p>🎓 CSS371 NLP Project | Historical Events Vector Database | 
-        Built with Streamlit, FAISS, SentenceTransformers & Groq</p>
-        </div>
-        """, 
-        unsafe_allow_html=True
-    )
 
 if __name__ == "__main__":
     main()
