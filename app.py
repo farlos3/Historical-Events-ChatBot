@@ -185,7 +185,7 @@ def main():
                     st.markdown(f"**Source {i}** (Similarity: {event['similarity']:.3f})")
                     st.text_area(
                         f"Content", 
-                        value=event['content'][:300] + "..." if len(event['content']) > 300 else event['content'],
+                        value=event['content'],
                         height=80,
                         key=f"quick_source_{i}_{int(time.time())}"
                     )
