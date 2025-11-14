@@ -1,0 +1,32 @@
+# Example historical events data
+# Replace this with your actual data
+
+World War I was a global conflict that lasted from 1914 to 1918, involving many countries and resulting in significant casualties and political changes.
+
+The Russian Revolution of 1917 marked the end of the Tsarist regime and led to the establishment of the Soviet Union under Vladimir Lenin.
+
+The Treaty of Versailles, signed in 1919, officially ended World War I and imposed heavy reparations on Germany, contributing to economic instability.
+
+The assassination of Archduke Franz Ferdinand on June 28, 1914, in Sarajevo sparked the beginning of World War I.
+
+The Battle of Gettysburg (July 1-3, 1863) was a turning point in the American Civil War, marking the beginning of the Confederate defeat.
+
+The French Revolution (1789-1799) transformed France from a monarchy to a republic and had lasting effects on European politics.
+
+The Industrial Revolution began in Britain in the late 18th century and fundamentally changed manufacturing, transportation, and society.
+
+The Black Death pandemic (1347-1351) killed an estimated 75-200 million people in Europe, Asia, and North Africa.
+
+The fall of the Berlin Wall in 1989 symbolized the end of the Cold War and the reunification of Germany.
+
+The bombing of Pearl Harbor on December 7, 1941, brought the United States into World War II.
+
+The Renaissance period (14th-17th centuries) marked a cultural rebirth in Europe, emphasizing art, science, and humanism.
+
+The Great Depression (1929-1939) was a severe worldwide economic downturn that affected millions of people globally.
+
+The Mongol Empire, founded by Genghis Khan in the 13th century, became the largest contiguous empire in history.
+
+The American Civil Rights Movement of the 1950s and 1960s fought against racial segregation and discrimination in the United States.
+
+The discovery of the New World by Christopher Columbus in 1492 opened up new trade routes and led to European colonization of the Americas.
