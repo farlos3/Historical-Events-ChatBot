@@ -91,9 +91,6 @@ Project/
 ### Running the Streamlit App
 
 ```bash
-# Navigate to project directory
-cd "F:/University/Year 3 Semester 1/CSS371 - NLP/Project"
-
 # Run Streamlit app
 streamlit run app.py
 
