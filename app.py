@@ -139,7 +139,7 @@ def main():
             placeholder="e.g., What caused World War I? You can ask complex or simple questions here...",
             height=100
         )
-        submit_chat = st.form_submit_button("🚀 Send", use_container_width=True)
+        submit_chat = st.form_submit_button("Send", use_container_width=True)
 
     if submit_chat and chat_input.strip():
         # Add user message to history
@@ -186,6 +186,8 @@ def main():
         st.info(f"⏱️ Response generated in {response_time:.2f} seconds")
     
     # Display chat history
+    if 'chat_history' not in st.session_state:
+        st.session_state.chat_history = []
     if st.session_state.chat_history:
         st.markdown("---")
         st.subheader("💬 Chat History")
