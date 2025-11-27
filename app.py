@@ -182,7 +182,7 @@ def main():
         if response_data['sources_count'] > 0:
             with st.expander(f"📚 Sources Used ({response_data['sources_count']} events)", expanded=False):
                 for i, event in enumerate(response_data['relevant_events'], 1):
-                    st.markdown(f"**Source {i}** (Similarity: {event['similarity']:.3f})")
+                    st.markdown(f"**Source {i}** (ID: {event.get('event_id', '-')}) (Similarity: {event['similarity']:.3f})")
                     st.text_area(
                         f"Content", 
                         value=event['content'],
@@ -261,7 +261,7 @@ def main():
                     if message.get('sources_count', 0) > 0 and 'sources' in message:
                         with st.expander(f"📖 View {message['sources_count']} Sources", expanded=False):
                             for j, source in enumerate(message['sources'], 1):
-                                st.markdown(f"**Source {j}** (Similarity: {source.get('similarity', 0):.3f})")
+                                st.markdown(f"**Source {j}** (ID: {source.get('event_id', '-')}) (Similarity: {source.get('similarity', 0):.3f})")
                                 st.text_area(
                                     f"Event Content",
                                     value=source.get('content', ''),
