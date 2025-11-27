@@ -119,7 +119,7 @@ def main():
         
         # Search parameters
         st.subheader("⚙️ Chat Settings")
-        chat_top_k = st.slider("Number of Sources (top_k)", min_value=3, max_value=10, value=DEFAULT_TOP_K)
+        chat_top_k = st.slider("Number of Sources (top_k)", min_value=5, max_value=30, value=DEFAULT_TOP_K)
         
         # Temperature setting
         temperature = st.slider("Response Creativity", min_value=0.0, max_value=1.0, value=TEMPERATURE, step=0.1)

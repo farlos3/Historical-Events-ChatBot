@@ -1,8 +1,15 @@
 # 📚 Historical Events ChatBot
+#
+# 🟢 Deployed on Streamlit Cloud: [Launch App](https://historical-events-chatbot.streamlit.app/)
+
 
 A Streamlit-based AI chatbot that uses FAISS vector database and Groq's Llama model to answer questions about historical events through Retrieval-Augmented Generation (RAG).
 
 ## 🚀 Features
+**This project is deployed via Streamlit Cloud. You can try the live demo here:**
+
+[https://historical-events-chatbot.streamlit.app/](https://historical-events-chatbot.streamlit.app/)
+
 
 - **Vector Search**: FAISS-powered similarity search for relevant historical events
 - **RAG Pipeline**: Combines vector search with LLM for contextual responses
