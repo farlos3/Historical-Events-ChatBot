@@ -17,7 +17,6 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-
 class HistoricalEventsVectorDB:
     """Vector Database for Historical Events with RAG capabilities"""
     
