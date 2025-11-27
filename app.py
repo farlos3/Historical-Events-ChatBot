@@ -19,7 +19,7 @@ APP_TITLE = os.getenv("APP_TITLE", "Historical Events ChatBot")
 PAGE_ICON = os.getenv("PAGE_ICON", "📚")
 DATA_FILENAME = os.getenv("DATA_PATH", "descriptions.txt")
 TEMPERATURE = float(os.getenv("TEMPERATURE", "0.3"))
-DEFAULT_TOP_K = int(os.getenv("TOP_K", "5"))
+DEFAULT_TOP_K = int(os.getenv("TOP_K", "20"))
 
 # Page configuration
 st.set_page_config(
