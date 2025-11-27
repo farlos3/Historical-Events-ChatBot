@@ -131,39 +131,32 @@ def main():
             st.info(f"**Temperature:** {temperature}")
             st.info(f"**Embedding Model:** {os.getenv('EMBEDDING_MODEL', 'all-MiniLM-L6-v2')}")
     
-    # Quick chat input section
-    st.subheader("🚀 Quick Question")
-    with st.container():
-        col1, col2 = st.columns([4, 1])
-        
-        with col1:
-            quick_query = st.text_input(
-                "Ask about historical events:",
-                placeholder="e.g., What caused World War I? Tell me about the Russian Revolution...",
-                key="quick_chat"
-            )
-        
-        with col2:
-            st.markdown("<br>", unsafe_allow_html=True)  # Add space
-            quick_ask = st.button("💬 Ask", use_container_width=True, key="quick_ask")
-    
-    # Process quick query
-    if quick_ask and quick_query.strip():
+    # Unified chat input section
+    st.subheader("💬 Ask about historical events")
+    with st.form("chat_form", clear_on_submit=True):
+        chat_input = st.text_area(
+            "Ask your question:",
+            placeholder="e.g., What caused World War I? You can ask complex or simple questions here...",
+            height=100
+        )
+        submit_chat = st.form_submit_button("🚀 Send", use_container_width=True)
+
+    if submit_chat and chat_input.strip():
         # Add user message to history
         if 'chat_history' not in st.session_state:
             st.session_state.chat_history = []
-            
         st.session_state.chat_history.append({
             "role": "user",
-            "content": quick_query,
+            "content": chat_input,
             "timestamp": time.time()
         })
-        
-        with st.spinner("AI is thinking..."):
+
+        # Generate AI response
+        with st.spinner("🤔 AI is thinking..."):
             start_time = time.time()
-            response_data = db.chat(quick_query, top_k=chat_top_k)
+            response_data = db.chat(chat_input, top_k=chat_top_k)
             response_time = time.time() - start_time
-        
+
         # Add AI response to history
         st.session_state.chat_history.append({
             "role": "assistant",
@@ -173,11 +166,11 @@ def main():
             "response_time": response_time,
             "timestamp": time.time()
         })
-        
+
         # Display response immediately
         st.markdown("### 🤖 AI Response:")
         st.markdown(response_data['response'])
-        
+
         # Show sources
         if response_data['sources_count'] > 0:
             with st.expander(f"📚 Sources Used ({response_data['sources_count']} events)", expanded=False):
@@ -189,45 +182,8 @@ def main():
                         height=80,
                         key=f"quick_source_{i}_{int(time.time())}"
                     )
-        
+
         st.info(f"⏱️ Response generated in {response_time:.2f} seconds")
-    
-    # Chat history
-    if 'chat_history' not in st.session_state:
-        st.session_state.chat_history = []
-    
-    # Chat input
-    with st.form("chat_form", clear_on_submit=True):
-        chat_input = st.text_area(
-            "Ask a detailed question about historical events:",
-            placeholder="You can ask complex questions here...",
-            height=100
-        )
-        submit_chat = st.form_submit_button("🚀 Send", use_container_width=True)
-    
-    if submit_chat and chat_input.strip():
-        # Add user message to history
-        st.session_state.chat_history.append({
-            "role": "user",
-            "content": chat_input,
-            "timestamp": time.time()
-        })
-        
-        # Generate AI response
-        with st.spinner("🤔 AI is thinking..."):
-            start_time = time.time()
-            response_data = db.chat(chat_input, top_k=chat_top_k)
-            response_time = time.time() - start_time
-        
-        # Add AI response to history
-        st.session_state.chat_history.append({
-            "role": "assistant",
-            "content": response_data['response'],
-            "sources": response_data['relevant_events'],
-            "sources_count": response_data['sources_count'],
-            "response_time": response_time,
-            "timestamp": time.time()
-        })
     
     # Display chat history
     if st.session_state.chat_history:
