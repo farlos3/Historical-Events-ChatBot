@@ -1,11 +1,20 @@
-# 📚 Historical Events ChatBot
+# Historical Events ChatBot
+
+<p align="left">
+   <a href="https://www.python.org/" target="_blank"><img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/></a>
+   <a href="https://streamlit.io/" target="_blank"><img src="https://img.shields.io/badge/Streamlit-Cloud-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/></a>
+   <a href="https://github.com/facebookresearch/faiss" target="_blank"><img src="https://img.shields.io/badge/FAISS-Vector%20DB-005571?style=for-the-badge&logo=facebook&logoColor=white" alt="FAISS"/></a>
+   <a href="https://www.sbert.net/" target="_blank"><img src="https://img.shields.io/badge/SentenceTransformers-Embeddings-009688?style=for-the-badge&logo=python&logoColor=white" alt="SentenceTransformers"/></a>
+   <a href="https://groq.com/" target="_blank"><img src="https://img.shields.io/badge/Groq-LLM-00B4FF?style=for-the-badge&logo=groq&logoColor=white" alt="Groq"/></a>
+</p>
+
 #
-# 🟢 Deployed on Streamlit Cloud: [Launch App](https://historical-events-chatbot.streamlit.app/)
+# Deployed on Streamlit Cloud: [Launch App](https://historical-events-chatbot.streamlit.app/)
 
 
 A Streamlit-based AI chatbot that uses FAISS vector database and Groq's Llama model to answer questions about historical events through Retrieval-Augmented Generation (RAG).
 
-## 🚀 Features
+## Features
 **This project is deployed via Streamlit Cloud. You can try the live demo here:**
 
 [https://historical-events-chatbot.streamlit.app/](https://historical-events-chatbot.streamlit.app/)
@@ -127,22 +136,22 @@ print(response['response'])
 
 ## Web Interface Features
 
-### 🔍 Event Search
+### Event Search
 - Semantic similarity search across historical events
 - Adjustable top-k results
 - Similarity scores and detailed event information
 
-### 💬 AI ChatBot
+### AI ChatBot
 - RAG-powered responses using historical context
 - Source citation and transparency
 - Response time tracking
 
-### 📊 Database Statistics
+### Database Statistics
 - Total events count
 - Embedding dimensions and memory usage
 - Event length statistics
 
-### ⚙️ Customizable Settings
+### Customizable Settings
 - Search parameters (top-k)
 - Model configuration display
 - Chat history management
